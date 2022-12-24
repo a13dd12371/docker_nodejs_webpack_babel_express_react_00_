@@ -16,4 +16,8 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "node", "./serverHttp/serverHttp.js" ]
+
+## CMD [ "node", "./serverHttp/serverHttp.js" ]
+CMD [ "/usr/src/app/node_modules/nodemon/bin/nodemon.js", "./serverHttp/serverHttp.js" ]
+## CMD [ "node", "./serverExpress/serverExpress.js" ]
+## CMD [ "/usr/src/app/node_modules/nodemon/bin/nodemon.js", "./serverExpress/serverExpress.js" ]

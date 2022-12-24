@@ -1,6 +1,7 @@
 const http = require('http');
 const url = require("url");
-var fs = require('fs');
+const path = require('path');
+const fs = require('fs');
 
 console.log("## serverHttp/serverHttp.js")
 console.log("__dirname: ", __dirname)
@@ -16,7 +17,8 @@ const requestListerner = (request, response) => {
   console.log("\t ** serverHttp/serverHttp.js >> requestListerner")
   console.log("__dirname: ", __dirname)
   console.log("process.cwd(): ", process.cwd())
-  response.end(fs.readFileSync('./clientHTML/index.html'))
+  // response.end(fs.readFileSync('./clientHTML/index.html'))
+  response.end(fs.readFileSync(path.join(__dirname, '..', '/clientHTML', '/index.html')))
 }
 
 // const serverHTTP = http.createServer(requestListerner).listen(_Port)
